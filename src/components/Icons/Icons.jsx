@@ -8,7 +8,7 @@ function Icons({ name, color, width, height }) {
 		fill: ${color};
 		width: ${width};
 		height: ${height};
-		display: block;
+		display: inline-block;
 	`;
 	return (
 		<Svg>

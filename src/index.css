@@ -8,6 +8,7 @@
 	--color-gray-lighter: #f1f1f1;
 	--color-orange-dark: #d87d4a;
 	--color-orange-light: #fbab85;
+	--color-transparent: transparent;
 	/* * FONT-SIZE */
 	--default-font-size: 1.6rem;
 	--h1-font-size: 5.6rem;
@@ -44,4 +45,8 @@ a {
 }
 li {
 	list-style: none;
+}
+button {
+	border: none;
+	cursor: pointer;
 }
