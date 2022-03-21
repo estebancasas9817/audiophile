@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero';
 import Wrapper from '../../components/Wrapper/Wrapper';
 import ProductBanner from '../../components/ProductBanner/ProductBanner';
 import Grid from '../../components/Grid/Grid';
+import AudioCard from '../../components/AudioCard/AudioCard';
 
 function Home() {
 	return (
@@ -14,6 +15,7 @@ function Home() {
 			<Wrapper>
 				<ProductBanner />
 				<Grid />
+				<AudioCard />
 			</Wrapper>
 		</div>
 	);

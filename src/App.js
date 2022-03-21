@@ -9,6 +9,7 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Checkout from './pages/Checkout/Checkout';
 import Header from './components/Header/Header';
 import useFetch from './hooks/useFetch';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	const { data: navbar } = useFetch('navbar');
@@ -24,6 +25,7 @@ function App() {
 				<Route path="/product-detail" element={<ProductDetail />} />
 				<Route path="/speakers" element={<Speakers />} />
 			</Routes>
+			<Footer navbar={navbar} />
 		</>
 	);
 }
