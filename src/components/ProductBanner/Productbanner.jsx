@@ -2,7 +2,7 @@ import React from 'react';
 import ShopButton from '../Buttons/ShopButton/ShopButton';
 import './ProductBanner.css';
 
-function Productbanner() {
+function ProductBanner() {
 	return (
 		<div className="product__list">
 			<div className="product__container">
@@ -31,4 +31,4 @@ function Productbanner() {
 	);
 }
 
-export default Productbanner;
+export default ProductBanner;

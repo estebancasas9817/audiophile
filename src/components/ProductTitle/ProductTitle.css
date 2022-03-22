@@ -1,0 +1,8 @@
+.title {
+	font-size: var(--h2-font-size);
+	margin: 0 auto;
+	max-width: var(--max-width);
+	text-align: center;
+	padding: 10rem 0;
+	text-transform: uppercase;
+}

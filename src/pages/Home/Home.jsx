@@ -5,20 +5,23 @@ import Wrapper from '../../components/Wrapper/Wrapper';
 import ProductBanner from '../../components/ProductBanner/ProductBanner';
 import Grid from '../../components/Grid/Grid';
 import AudioCard from '../../components/AudioCard/AudioCard';
+import PropTypes from 'prop-types';
 
-function Home() {
+function Home({ filteredHeroProduct }) {
 	return (
-		<div className="home">
+		<section className="home">
 			<div className="home__container">
-				<Hero />
+				<Hero filteredHeroProduct={filteredHeroProduct} />
 			</div>
 			<Wrapper>
 				<ProductBanner />
 				<Grid />
 				<AudioCard />
 			</Wrapper>
-		</div>
+		</section>
 	);
 }
-
+Home.propTypes = {
+	filteredHeroProduct: PropTypes.array,
+};
 export default Home;

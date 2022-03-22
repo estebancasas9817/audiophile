@@ -2,6 +2,7 @@ import React from 'react';
 import Icons from '../Icons/Icons';
 import NavBar from '../NavBar/NavBar';
 import './Header.css';
+import PropTypes from 'prop-types';
 
 function Header({ navbar }) {
 	return (
@@ -12,5 +13,9 @@ function Header({ navbar }) {
 		</header>
 	);
 }
+
+Header.propTypes = {
+	navbar: PropTypes.array,
+};
 
 export default Header;

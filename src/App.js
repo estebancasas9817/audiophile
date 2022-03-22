@@ -13,17 +13,41 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 	const { data: navbar } = useFetch('navbar');
+	const { data: products } = useFetch('products');
+	const filteredHeadphones = products.filter((element) => {
+		if (element.id > 1 && element.id <= 4) {
+			return element;
+		}
+	});
+	const filteredEarphones = products.filter((element) => element.id === 1);
+	const filteredHeroProduct = products.filter((element) => element.id === 4);
+	const filteredSpeakers = products.filter((element) => {
+		if (element.id > 4) {
+			return element;
+		}
+	});
 	return (
 		<>
 			<Header navbar={navbar} />
-
 			<Routes>
-				<Route path="/home" element={<Home />} />
+				<Route
+					path="/home"
+					element={<Home filteredHeroProduct={filteredHeroProduct} />}
+				/>
 				<Route path="/checkout" element={<Checkout />} />
-				<Route path="/earphones" element={<Earphones />} />
-				<Route path="/headphones" element={<Headphones />} />
+				<Route
+					path="/earphones"
+					element={<Earphones filteredEarphones={filteredEarphones} />}
+				/>
+				<Route
+					path="/headphones"
+					element={<Headphones filteredHeadphones={filteredHeadphones} />}
+				/>
 				<Route path="/product-detail" element={<ProductDetail />} />
-				<Route path="/speakers" element={<Speakers />} />
+				<Route
+					path="/speakers"
+					element={<Speakers filteredSpeakers={filteredSpeakers} />}
+				/>
 			</Routes>
 			<Footer navbar={navbar} />
 		</>

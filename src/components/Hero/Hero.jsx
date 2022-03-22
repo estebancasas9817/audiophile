@@ -1,25 +1,24 @@
 import React from 'react';
-import Button from '../Buttons/Button/Button';
+import styled from 'styled-components';
+import ProductCard from '../ProductCard/ProductCard';
 import './Hero.css';
+import PropTypes from 'prop-types';
 
-function Hero() {
+function Hero({ filteredHeroProduct }) {
+	const Heros = styled.div`
+		max-width: var(--max-width);
+		margin: 0 auto;
+		position: relative;
+		height: 80vh;
+	`;
+
 	return (
-		<div className="hero">
-			<div className="hero__container">
-				<h2 className="hero__subtitle">New Product</h2>
-				<h1 className="hero__title">XX99 Mark II Headphones</h1>
-				<h3 className="hero__text">
-					Experience natural, lifelike audio and exceptional build quality made
-					for the passionate music enthusiast.
-				</h3>
-				<Button
-					backcolor="--color-orange-dark"
-					hover="--color-orange-light"
-					color="--color-white"
-				/>
-			</div>
-		</div>
+		<Heros hero>
+			<ProductCard product={filteredHeroProduct[0]} />
+		</Heros>
 	);
 }
-
+Hero.propTypes = {
+	filteredHeroProduct: PropTypes.array,
+};
 export default Hero;

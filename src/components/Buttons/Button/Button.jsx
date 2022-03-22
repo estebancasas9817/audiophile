@@ -1,6 +1,7 @@
 import React from 'react';
 import './Button.css';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 function Button({ backcolor, hover, border, color }) {
 	const Btn = styled.button`
@@ -21,5 +22,10 @@ function Button({ backcolor, hover, border, color }) {
 		</Btn>
 	);
 }
-
+Button.propTypes = {
+	backcolor: PropTypes.string,
+	hover: PropTypes.string,
+	border: PropTypes.string,
+	color: PropTypes.string,
+};
 export default Button;
