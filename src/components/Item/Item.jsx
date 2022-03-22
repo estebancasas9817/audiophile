@@ -5,15 +5,13 @@ import NumbersInput from '../FormElements/NumbersInput/NumbersInput';
 import PropTypes from 'prop-types';
 
 const Item = ({ product }) => {
-	console.log(product);
-
 	return (
 		<div className="item__container">
 			<div className="item__left">
 				<img src={product.image} alt="" width="500rem" />
 			</div>
 			<div className="item__right">
-				<h2 className="item__subtitle">NEW PRODUCT</h2>
+				{product.new && <h2 className="item__subtitle">NEW PRODUCT</h2>}
 				<h1 className="item__title">{product.name}</h1>
 				<p className="item__text">{product.description}</p>
 				<h3 className="item__price">$ {product.price}</h3>

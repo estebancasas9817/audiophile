@@ -23,7 +23,7 @@ function ProductCard({ relative, product }) {
 		${relative
 			? css`
 					.hero__subtitle {
-						color: var(--color-black);
+						color: var(--color-orange-dark);
 						font-size: var(--h6-font-size);
 						font-weight: 100;
 						letter-spacing: 1rem;
@@ -72,7 +72,7 @@ function ProductCard({ relative, product }) {
 	`;
 	return (
 		<HeroContainer>
-			{product && <h2 className="hero__subtitle">New Product</h2>}
+			{product.new && <h2 className="hero__subtitle">New Product</h2>}
 			{product && <h1 className="hero__title">{product.name}</h1>}
 			{product && <h3 className="hero__text">{product.description}</h3>}
 
