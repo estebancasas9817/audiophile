@@ -75,10 +75,13 @@ function ProductCard({ relative, product }) {
 			{product && <h2 className="hero__subtitle">New Product</h2>}
 			{product && <h1 className="hero__title">{product.name}</h1>}
 			{product && <h3 className="hero__text">{product.description}</h3>}
+
 			<Button
 				backcolor="--color-orange-dark"
 				hover="--color-orange-light"
 				color="--color-white"
+				text="See product"
+				product={product}
 			/>
 		</HeroContainer>
 	);

@@ -43,7 +43,10 @@ function App() {
 					path="/headphones"
 					element={<Headphones filteredHeadphones={filteredHeadphones} />}
 				/>
-				<Route path="/product-detail" element={<ProductDetail />} />
+				<Route
+					path="/product-detail/:productId"
+					element={<ProductDetail products={products} />}
+				/>
 				<Route
 					path="/speakers"
 					element={<Speakers filteredSpeakers={filteredSpeakers} />}
