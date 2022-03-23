@@ -6,7 +6,7 @@
 		'first second'
 		'third second';
 	grid-template-rows: 28rem 28rem;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 44.5rem 1fr;
 	gap: 3rem;
 }
 .gridItems > * {
