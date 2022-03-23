@@ -7,7 +7,7 @@ import Grid from '../../components/Grid/Grid';
 import AudioCard from '../../components/AudioCard/AudioCard';
 import PropTypes from 'prop-types';
 
-function Home({ filteredHeroProduct }) {
+function Home({ filteredHeroProduct, gridItems }) {
 	return (
 		<section className="home">
 			<div className="home__container">
@@ -15,7 +15,7 @@ function Home({ filteredHeroProduct }) {
 			</div>
 			<Wrapper>
 				<ProductBanner />
-				<Grid />
+				<Grid gridItems={gridItems} />
 				<AudioCard />
 			</Wrapper>
 		</section>
@@ -23,5 +23,6 @@ function Home({ filteredHeroProduct }) {
 }
 Home.propTypes = {
 	filteredHeroProduct: PropTypes.array,
+	gridItems: PropTypes.array,
 };
 export default Home;

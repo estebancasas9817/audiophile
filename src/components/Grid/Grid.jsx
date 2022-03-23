@@ -1,13 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from '../Buttons/Button/Button';
 import './Grid.css';
+import PropTypes from 'prop-types';
 
-function Grid() {
+function Grid({ gridItems }) {
+	const GridCard = styled.div`
+		${({ product }) =>
+			product === 6
+				? css`
+						width: 35rem;
+						position: absolute;
+						right: 10%;
+						top: 20%;
+				  `
+				: css``}
+	`;
 	const GridTitle = styled.h1`
-		font-size: ${(props) => (props.h1 ? '5.6rem' : '2.8rem')};
-		color: ${(props) => (props.h1 ? 'white' : 'black')};
+		font-size: ${(props) => (props.product === 6 ? '5.6rem' : '2.8rem')};
+		color: ${(props) => (props.product === 6 ? 'white' : 'black')};
 		margin-bottom: 2.4rem;
+		text-transform: uppercase;
 	`;
 
 	const GridSubTitle = styled.h2`
@@ -18,44 +31,30 @@ function Grid() {
 	`;
 	return (
 		<div className="grid">
-			<div className="big">
-				<div className="grid__img" />
-				<div className="grid__card">
-					<GridTitle h1>ZX9 SPEAKER</GridTitle>
-					<GridSubTitle>
-						Upgrade to premium speakers that are phenomenally built to deliver
-						truly remarkable sound.
-					</GridSubTitle>
-					<Button
-						backcolor="--color-transparent"
-						hover="--color-black"
-						border="1px solid black"
-						color="--color-black"
-					/>
+			{gridItems.reverse().map((product) => (
+				<div className={product.slug} key={product.id}>
+					{product.image && <img src={product.image} className="grid__img" />}
+					<GridCard product={product.id}>
+						<GridTitle product={product.id}>{product.name}</GridTitle>
+						{product.text && <GridSubTitle>{product.text}</GridSubTitle>}
+						{product.name && (
+							<Button
+								backcolor="--color-transparent"
+								hover="--color-black"
+								border="1px solid black"
+								color="--color-black"
+								text="See Product"
+								product={product}
+							/>
+						)}
+					</GridCard>
 				</div>
-			</div>
-			<header className="medium">
-				<GridTitle h2>ZX7 SPEAKER</GridTitle>
-				<Button
-					backcolor="--color-transparent"
-					hover="--color-black"
-					border="1px solid black"
-					color="--color-black"
-				/>
-			</header>
-			<div className="small-1" />
-			<section className="small-2">
-				<GridTitle h2>YX1 EARPHONES</GridTitle>
-
-				<Button
-					backcolor="--color-transparent"
-					hover="--color-black"
-					border="1px solid black"
-					color="--color-black"
-				/>
-			</section>
+			))}
 		</div>
 	);
 }
-
+Grid.propTypes = {
+	product: PropTypes.number,
+	gridItems: PropTypes.array,
+};
 export default Grid;

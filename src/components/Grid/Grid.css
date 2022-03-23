@@ -17,28 +17,29 @@
 	font-size: 3rem;
 	padding: 2rem;
 	border-radius: 0.5rem;
+	position: relative;
 }
 
-.big {
+.zx9-speaker {
 	background-color: var(--color-orange-dark);
 	grid-area: big;
 	display: flex;
 	position: relative;
 	overflow: hidden;
 }
-.medium {
+.zx7-speaker {
 	background-image: url('../../assets/shared/desktop/image-speaker-zx7.3d4940e8.jpg');
 	grid-area: medium;
 	padding-top: 10rem;
 	padding-left: 7rem;
 }
-.small-1 {
+.yx1-earphones {
 	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
 	grid-area: small-1;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.small-2 {
+.white-grid {
 	background-color: var(--color-gray-lighter);
 	grid-area: small-2;
 	padding-top: 10rem;
@@ -46,15 +47,14 @@
 }
 
 .grid__img {
-	background-image: url('../../assets/shared/desktop/image-speaker-zx9.153cd899.png');
-	width: 60rem;
-	height: 45rem;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	align-self: flex-end;
 	position: absolute;
 	bottom: -2%;
+	left: 10%;
+	height: 45rem;
 }
 
 .grid__card {
@@ -62,4 +62,11 @@
 	position: absolute;
 	right: 10%;
 	top: 20%;
+}
+.zx7-speaker {
+	background-image: url('../../assets/shared/desktop/image-speaker-zx7.3d4940e8.jpg');
+	grid-area: medium;
+	padding-top: 10rem;
+	padding-left: 7rem;
+	position: relative;
 }

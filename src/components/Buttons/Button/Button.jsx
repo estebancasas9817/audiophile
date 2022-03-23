@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 function Button({ backcolor, hover, border, color, text, product }) {
-	console.log(product);
 	const Btn = styled.button`
 		background-color: var(${backcolor});
 		padding: 1.5rem 3.1rem;
@@ -26,7 +25,7 @@ function Button({ backcolor, hover, border, color, text, product }) {
 
 	return (
 		<Btn type="button" className="btn">
-			{product.name && (
+			{text && (
 				<Link
 					to={`/product-detail/${product.id}`}
 					className="btn__link"

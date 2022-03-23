@@ -15,19 +15,23 @@ function ProductDetail({ products }) {
 	);
 
 	return (
-		<section className="productDetail">
-			<Item product={product} />
-			<ProductFeature product={product} />
-			<GridItem product={product} />
-			<h1 className="recommendTitle">YOU MAY ALSO LIKE</h1>
-			<div className="recommendItems">
-				{product.others.map((product) => (
-					<RecommendItem product={product} key={product.name} />
-				))}
-			</div>
+		<>
+			{product && (
+				<section className="productDetail">
+					<Item product={product} />
+					<ProductFeature product={product} />
+					<GridItem product={product} />
+					<h1 className="recommendTitle">YOU MAY ALSO LIKE</h1>
+					<div className="recommendItems">
+						{product.others.map((product) => (
+							<RecommendItem product={product} key={product.name} />
+						))}
+					</div>
 
-			<AudioCard />
-		</section>
+					<AudioCard />
+				</section>
+			)}
+		</>
 	);
 }
 ProductDetail.propTypes = {

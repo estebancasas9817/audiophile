@@ -14,11 +14,13 @@ import Footer from './components/Footer/Footer';
 function App() {
 	const { data: navbar } = useFetch('navbar');
 	const { data: products } = useFetch('products');
+	const { data: gridItems } = useFetch('grid-items');
 	const filteredHeadphones = products.filter((element) => {
 		if (element.id > 1 && element.id <= 4) {
 			return element;
 		}
 	});
+
 	const filteredEarphones = products.filter((element) => element.id === 1);
 	const filteredHeroProduct = products.filter((element) => element.id === 4);
 	const filteredSpeakers = products.filter((element) => {
@@ -32,7 +34,12 @@ function App() {
 			<Routes>
 				<Route
 					path="/home"
-					element={<Home filteredHeroProduct={filteredHeroProduct} />}
+					element={
+						<Home
+							filteredHeroProduct={filteredHeroProduct}
+							gridItems={gridItems}
+						/>
+					}
 				/>
 				<Route path="/checkout" element={<Checkout />} />
 				<Route

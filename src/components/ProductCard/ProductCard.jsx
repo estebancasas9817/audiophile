@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../Buttons/Button/Button';
 import './ProductCard.css';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import Button from '../Buttons/Button/Button';
 function ProductCard({ relative, product }) {
 	const HeroContainer = styled.div`
 		max-width: 40rem;
@@ -45,7 +45,7 @@ function ProductCard({ relative, product }) {
 			  `
 			: css`
 					position: absolute;
-					top: 35%;
+					top: 25%;
 					left: 0%;
 
 					.hero__subtitle {
@@ -70,12 +70,12 @@ function ProductCard({ relative, product }) {
 					}
 			  `}
 	`;
+
 	return (
 		<HeroContainer>
 			{product.new && <h2 className="hero__subtitle">New Product</h2>}
 			{product && <h1 className="hero__title">{product.name}</h1>}
 			{product && <h3 className="hero__text">{product.description}</h3>}
-
 			<Button
 				backcolor="--color-orange-dark"
 				hover="--color-orange-light"
