@@ -1,0 +1,78 @@
+.cartModal {
+	width: 38rem;
+	background-color: var(--color-white);
+	position: absolute;
+	top: 15%;
+	left: 65%;
+	z-index: 1000;
+	padding: 3.3rem;
+	border-radius: 8px;
+}
+
+.modal__title {
+	font-size: var(--h6-font-size);
+	text-transform: uppercase;
+	letter-spacing: 1.29px;
+}
+
+.modal__body {
+	margin-top: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
+}
+
+.modal__item {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.modal__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.modal__img {
+	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
+	width: 6.4rem;
+	height: 6.4rem;
+}
+
+.modal__name {
+	font-size: var(--body-font-size);
+	text-transform: uppercase;
+}
+
+.modal__price {
+	color: var(--color-black);
+	opacity: 50%;
+}
+
+.modal__btn {
+	margin-left: auto;
+}
+.modal__total-name {
+	margin-top: 3.2rem;
+	font-size: var(--body-font-size);
+	color: var(--color-black);
+	opacity: 50%;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.modal__total-price {
+	font-size: var(--h6-font-size);
+	font-weight: 700;
+	margin-top: 3.2rem;
+}
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px);
+	z-index: 100;
+}

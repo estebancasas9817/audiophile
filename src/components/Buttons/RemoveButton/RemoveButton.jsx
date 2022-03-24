@@ -1,7 +1,7 @@
 import React from 'react';
-
+import './RemoveButton.css';
 function RemoveButton() {
-	return <div>RemoveButton</div>;
+	return <button className="remove__btn">Remove all</button>;
 }
 
 export default RemoveButton;

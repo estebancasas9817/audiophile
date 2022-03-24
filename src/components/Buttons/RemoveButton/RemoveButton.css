@@ -1,0 +1,7 @@
+.remove__btn {
+	background-color: transparent;
+	color: var(--color-black);
+	opacity: 50%;
+	font-size: var(--body-font-size);
+	border-bottom: 1px solid var(--color-black);
+}

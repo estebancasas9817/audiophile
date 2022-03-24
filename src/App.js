@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Headphones from './pages/Headphones/Headphones';
@@ -10,8 +10,10 @@ import Checkout from './pages/Checkout/Checkout';
 import Header from './components/Header/Header';
 import useFetch from './hooks/useFetch';
 import Footer from './components/Footer/Footer';
+import CartModal from './components/CartModal/CartModal';
 
 function App() {
+	const [isOpen, setIsOpen] = useState(false);
 	const { data: navbar } = useFetch('navbar');
 	const { data: products } = useFetch('products');
 	const { data: gridItems } = useFetch('grid-items');
@@ -28,9 +30,14 @@ function App() {
 			return element;
 		}
 	});
+
+	const handleCartBtn = () => {
+		setIsOpen(!isOpen);
+	};
 	return (
 		<>
-			<Header navbar={navbar} />
+			<Header navbar={navbar} handleCartBtn={handleCartBtn} />
+			<CartModal open={isOpen} />
 			<Routes>
 				<Route
 					path="/home"
