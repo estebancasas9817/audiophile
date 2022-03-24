@@ -1,0 +1,13 @@
+.checkout {
+	background-color: var(--color-white-darker-2);
+	padding: 14.2rem 0;
+}
+.checkout__container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	display: flex;
+	gap: 3rem;
+}
+.checkout__container > * {
+	border-radius: 8px;
+}

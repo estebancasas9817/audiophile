@@ -1,0 +1,11 @@
+.form {
+	background-color: var(--color-white);
+	padding: 5.4rem 4.8rem;
+	max-width: 73rem;
+}
+.form__title {
+	color: var(--color-black);
+	text-transform: uppercase;
+	font-size: var(--h3-font-size);
+	letter-spacing: 1.2px;
+}

@@ -1,19 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-// import NumbersInput from '../FormElements/NumbersInput/NumbersInput';
-// import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
-// import RemoveButton from '../Buttons/RemoveButton/RemoveButton';
+
 import './CheckoutModal.css';
 import Icons from '../Icons/Icons';
 import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
-function CheckoutModal() {
-	// const ModalFlex = styled.div`
-	// 	display: flex;
-	// 	align-items: center;
-	// 	justify-content: space-between;
-	// `;
+function CheckoutModal({ open }) {
 	if (!open) return null;
 	return (
 		<div>

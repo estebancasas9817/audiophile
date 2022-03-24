@@ -15,6 +15,7 @@ import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
 	const { data: navbar } = useFetch('navbar');
 	const { data: products } = useFetch('products');
 	const { data: gridItems } = useFetch('grid-items');
@@ -35,11 +36,17 @@ function App() {
 	const handleCartBtn = () => {
 		setIsOpen(!isOpen);
 	};
+	const handleCheckModal = () => {
+		setIsOpenCheckModal(!isOpenCheckModal);
+	};
 	return (
 		<>
 			<Header navbar={navbar} handleCartBtn={handleCartBtn} />
 			<CartModal open={isOpen} />
-			<CheckoutModal />
+			<CheckoutModal
+				handleCheckModal={handleCheckModal}
+				open={isOpenCheckModal}
+			/>
 			<Routes>
 				<Route
 					path="/home"

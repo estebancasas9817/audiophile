@@ -5,10 +5,12 @@
 	--color-black-ligther: #191919;
 	--color-white: #fff;
 	--color-white-darker: #fafafa;
+	--color-white-darker-2: #f2f2f2;
 	--color-gray-lighter: #f1f1f1;
 	--color-orange-dark: #d87d4a;
 	--color-orange-light: #fbab85;
 	--color-transparent: transparent;
+	--color-text-input: #cfcfcf;
 	/* * FONT-SIZE */
 	--default-font-size: 1.6rem;
 	--h1-font-size: 5.6rem;
