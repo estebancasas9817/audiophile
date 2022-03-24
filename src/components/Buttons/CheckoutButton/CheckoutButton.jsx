@@ -1,7 +1,11 @@
 import React from 'react';
 import './CheckoutButton.css';
-const CheckoutButton = () => {
-	return <button className="checkoutButton">Checkout</button>;
-};
+import PropTypes from 'prop-types';
 
+const CheckoutButton = ({ children }) => {
+	return <button className="checkoutButton">{children}</button>;
+};
+CheckoutButton.propTypes = {
+	children: PropTypes.children,
+};
 export default CheckoutButton;

@@ -11,6 +11,7 @@ import Header from './components/Header/Header';
 import useFetch from './hooks/useFetch';
 import Footer from './components/Footer/Footer';
 import CartModal from './components/CartModal/CartModal';
+import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,7 @@ function App() {
 		<>
 			<Header navbar={navbar} handleCartBtn={handleCartBtn} />
 			<CartModal open={isOpen} />
+			<CheckoutModal />
 			<Routes>
 				<Route
 					path="/home"

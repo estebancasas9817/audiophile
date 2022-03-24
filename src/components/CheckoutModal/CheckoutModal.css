@@ -1,0 +1,102 @@
+.checkoutModal {
+	width: 54rem;
+	background-color: var(--color-white);
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	transform: translate(-50% -50%);
+	z-index: 1000;
+	padding: 3.3rem;
+	border-radius: 8px;
+	padding: 4.8rem;
+}
+.icon__circle {
+	background-color: var(--color-orange-dark);
+	width: 6.4rem;
+	height: 6.4rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.checkout-modal-title {
+	font-size: var(--h3-font-size);
+	width: 28rem;
+	text-transform: uppercase;
+	margin: 3.8rem 0 2.4rem 0;
+}
+
+.checkout-modal-sub-title {
+	font-size: var(--body-font-size);
+	color: var(--color-black);
+	opacity: 50%;
+	font-weight: 400;
+	margin-bottom: 3.3rem;
+}
+.checkout-modal-body {
+	display: flex;
+	margin-bottom: 2.6rem;
+}
+
+.checkout-modal__left {
+	background-color: var(--color-white-darker);
+	padding: 2.4rem;
+	flex-basis: 60%;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.checkout-modal__right {
+	background-color: var(--color-black);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 4.1rem 3.2rem;
+	gap: 1rem;
+	flex: 1;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+.checkout-modal__flex {
+	display: flex;
+	border-bottom: 1px solid var(--color-black);
+	padding-bottom: 2rem;
+	gap: 2rem;
+}
+
+.checkout-modal__box {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.checkout-modal__img {
+	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
+	width: 6.4rem;
+	height: 6.4rem;
+}
+.first__item {
+	font-size: var(--body-font-size);
+}
+.first__itenm-price {
+	font-size: var(--sub-title-font-size);
+}
+.first__item-quantity {
+	margin-left: auto;
+	font-size: var(--body-font-size);
+	color: var(--color-black);
+	opacity: 50%;
+}
+.other__items {
+	font-size: var(--sub-title-font-size);
+	color: var(--color-black);
+	opacity: 50%;
+	text-align: center;
+	margin-top: 1.5rem;
+}
+.checkout-modal__total {
+	font-size: var(--sub-title-font-size);
+	color: var(--color-white);
+	opacity: 50%;
+	text-transform: uppercase;
+}

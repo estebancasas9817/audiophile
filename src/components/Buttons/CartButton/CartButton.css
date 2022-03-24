@@ -1,4 +1,6 @@
 .btn__cart {
 	background-color: transparent;
 	height: 2rem;
+	z-index: 101;
+	position: relative;
 }
