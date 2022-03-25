@@ -9,7 +9,7 @@ function NavBar({ navbar }) {
 			<ul className="nav__list">
 				{navbar.map((element) => (
 					<li className="nav__item" key={element.id}>
-						<NavLink className="nav__link" to={element.path}>
+						<NavLink className="nav__link" to={element.path + element.category}>
 							{element.title}
 						</NavLink>
 					</li>

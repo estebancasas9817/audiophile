@@ -2,10 +2,10 @@ import React from 'react';
 import './ProductTitle.css';
 import PropTypes from 'prop-types';
 
-function ProductTitle({ title }) {
-	return <h1 className="title">{title}</h1>;
+function ProductTitle({ children }) {
+	return <h1 className="title">{children}</h1>;
 }
 ProductTitle.propTypes = {
-	title: PropTypes.string,
+	children: PropTypes.children,
 };
 export default ProductTitle;
