@@ -10,9 +10,8 @@ import PropTypes from 'prop-types';
 import './ProductDetail.css';
 function ProductDetail({ products }) {
 	const params = useParams();
-	const product = products.find(
-		(element) => element.id === Number(params.productId)
-	);
+	const product = products.find((element) => element.slug === params.productId);
+
 	useEffect(() => {
 		window.scrollTo(2000, 0);
 	}, [params]);

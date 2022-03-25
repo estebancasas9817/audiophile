@@ -3,10 +3,10 @@ import './CheckoutButton.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const CheckoutButton = ({ children, handleCartBtn }) => {
+const CheckoutButton = ({ children, handleCheckModal, path }) => {
 	return (
-		<button className="checkoutButton" onClick={handleCartBtn}>
-			<Link to="/checkout" className="btn__link">
+		<button className="checkoutButton" onClick={handleCheckModal}>
+			<Link to={path} className="btn__link">
 				{children}
 			</Link>
 		</button>
@@ -14,6 +14,7 @@ const CheckoutButton = ({ children, handleCartBtn }) => {
 };
 CheckoutButton.propTypes = {
 	children: PropTypes.children,
-	handleCartBtn: PropTypes.fun,
+	handleCheckModal: PropTypes.fun,
+	path: PropTypes.string,
 };
 export default CheckoutButton;

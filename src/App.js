@@ -34,7 +34,6 @@ function App() {
 			<CheckoutModal
 				handleCheckModal={handleCheckModal}
 				open={isOpenCheckModal}
-				handleCartBtn={handleCartBtn}
 			/>
 			<Routes>
 				<Route
@@ -47,7 +46,10 @@ function App() {
 					}
 				/>
 				<Route path="/" element={<Navigate to="/home" replace />} />
-				<Route path="/checkout" element={<Checkout />} />
+				<Route
+					path="/checkout"
+					element={<Checkout handleCheckModal={handleCheckModal} />}
+				/>
 
 				<Route
 					path="/product-detail/:productId"

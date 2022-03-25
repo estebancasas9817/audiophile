@@ -56,7 +56,7 @@ function CartModal({ open, handleCartBtn }) {
 						<h1 className="modal__total-name">Total</h1>
 						<h3 className="modal__total-price">$ 456</h3>
 					</ModalFlex>
-					<CheckoutButton handleCartBtn={handleCartBtn}>
+					<CheckoutButton handleCartBtn={handleCartBtn} path="/checkout">
 						Checkout
 					</CheckoutButton>
 				</div>,

@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import './CheckoutModal.css';
 import Icons from '../Icons/Icons';
 import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
-function CheckoutModal({ open }) {
+function CheckoutModal({ open, handleCheckModal }) {
 	if (!open) return null;
 	return (
 		<div>
 			{ReactDOM.createPortal(
-				<div className="backdrop">gbghg</div>,
+				<div className="backdrop"></div>,
 				document.getElementById('overlay')
 			)}
 			{ReactDOM.createPortal(
@@ -44,7 +44,9 @@ function CheckoutModal({ open }) {
 							<p className="checkout-modal__price">$ 5,446</p>
 						</div>
 					</div>
-					<CheckoutButton>Back to home</CheckoutButton>
+					<CheckoutButton handleCheckModal={handleCheckModal} path="/home">
+						Back to home
+					</CheckoutButton>
 				</div>,
 				document.getElementById('portal')
 			)}
@@ -53,5 +55,6 @@ function CheckoutModal({ open }) {
 }
 CheckoutModal.propTypes = {
 	open: PropTypes.bool,
+	handleCheckModal: PropTypes.func,
 };
 export default CheckoutModal;
