@@ -1,4 +1,79 @@
 .summary {
 	background-color: var(--color-white);
 	padding: 3.3rem;
+	flex: 1;
+	align-self: flex-start;
+}
+.summary__title {
+	margin-bottom: 3.1rem;
+	font-size: var(--h6-font-size);
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+}
+
+.summary > ul {
+	display: flex;
+	gap: 3rem;
+	flex-direction: column;
+}
+
+.summary__flex {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.summary__item {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+.summary__quantity {
+	margin-left: auto;
+	color: var(--color-black);
+	opacity: 50%;
+	font-size: var(--body-font-size);
+}
+.summary__item-name {
+	font-size: var(--body-font-size);
+	text-transform: uppercase;
+}
+.summary__item-price {
+	font-size: var(--sub-title-font-size);
+	color: var(--color-black);
+	opacity: 50%;
+	font-weight: 700;
+}
+
+.summary__invoice {
+	margin-top: 3.2rem;
+}
+
+.summary__invoice > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.summary__invoice-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.summary__invoice-element {
+	font-size: var(--body-font-size);
+	color: #000;
+	opacity: 50%;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.summary__inoice-value {
+	font-size: var(--h6-font-size);
+	font-weight: 700;
+}
+.summary__inoice-value-color {
+	color: var(--color-orange-dark);
+}
+
+.summary__invoice-item-margin {
+	margin-top: 2.4rem;
 }

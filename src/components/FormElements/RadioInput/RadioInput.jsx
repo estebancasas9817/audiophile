@@ -1,11 +1,7 @@
 import React from 'react';
 import './RadioInput.css';
 function RadioInput() {
-	return (
-		<div className="radio__container">
-			<input type="radio" />
-		</div>
-	);
+	return <input type="radio" />;
 }
 
 export default RadioInput;

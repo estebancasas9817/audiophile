@@ -38,6 +38,12 @@
 	height: 6.4rem;
 }
 
+.summary__img {
+	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
+	width: 6.4rem;
+	height: 6.4rem;
+}
+
 .modal__name {
 	font-size: var(--body-font-size);
 	text-transform: uppercase;

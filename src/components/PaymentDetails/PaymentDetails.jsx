@@ -11,17 +11,23 @@ function PaymentDetails() {
 					<span className="payment__width">Payment Method</span>
 				</div>
 				<div className="payment__item payment__item-2">
-					<RadioInput />
-					<RadioInput />
+					<div className="payment__item-flex">
+						<RadioInput />
+						<span>e-Money</span>
+					</div>
+					<div className="payment__item-flex">
+						<RadioInput />
+						<span>Cash on delivery</span>
+					</div>
 				</div>
 
 				<div className="payment__item">
 					<span>e-Money Payment</span>
-					<TextInput type="number" />
+					<TextInput type="number" placeholder="238521993" />
 				</div>
 				<div className="payment__item">
 					<span>e-Money Pin</span>
-					<TextInput type="number" />
+					<TextInput type="number" placeholder="6891" />
 				</div>
 			</div>
 		</>

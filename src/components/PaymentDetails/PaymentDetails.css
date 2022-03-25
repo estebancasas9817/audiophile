@@ -16,3 +16,18 @@
 	font-size: var(--sub-title-font-size);
 	font-weight: 700;
 }
+
+.payment__item-flex {
+	display: flex;
+	padding: 1.8rem 2.4rem;
+	border-radius: 8px;
+	border: 1px solid var(--color-text-input);
+	width: 31rem;
+	gap: 2.1rem;
+	align-items: center;
+}
+.payment__item-flex > span {
+	font-size: var(--body-font-size);
+	color: var(--color-black);
+	font-weight: 700;
+}
