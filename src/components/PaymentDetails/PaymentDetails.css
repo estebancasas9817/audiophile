@@ -1,0 +1,18 @@
+.paymentDetails {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.payment__item-1 {
+	width: 31rem;
+	height: 13rem;
+}
+.payment__item {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+.payment__item > span {
+	font-size: var(--sub-title-font-size);
+	font-weight: 700;
+}

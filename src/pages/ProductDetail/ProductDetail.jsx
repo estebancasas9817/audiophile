@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AudioCard from '../../components/AudioCard/AudioCard';
 import GridItem from '../../components/GridItem/GridItem';
 import Item from '../../components/Item/Item';
@@ -13,6 +13,9 @@ function ProductDetail({ products }) {
 	const product = products.find(
 		(element) => element.id === Number(params.productId)
 	);
+	useEffect(() => {
+		window.scrollTo(2000, 0);
+	}, [params]);
 
 	return (
 		<>

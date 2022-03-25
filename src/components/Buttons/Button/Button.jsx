@@ -27,7 +27,7 @@ function Button({ backcolor, hover, border, color, text, product }) {
 		<Btn type="button" className="btn">
 			{text && (
 				<Link
-					to={`/product-detail/${product.id}`}
+					to={`/product-detail/${product?.id}`}
 					className="btn__link"
 					params={{ product: product }}
 				>

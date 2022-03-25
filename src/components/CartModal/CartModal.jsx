@@ -7,7 +7,7 @@ import './CartModal.css';
 import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
 import RemoveButton from '../Buttons/RemoveButton/RemoveButton';
 
-function CartModal({ open }) {
+function CartModal({ open, handleCartBtn }) {
 	const ModalFlex = styled.div`
 		display: flex;
 		align-items: center;
@@ -56,7 +56,9 @@ function CartModal({ open }) {
 						<h1 className="modal__total-name">Total</h1>
 						<h3 className="modal__total-price">$ 456</h3>
 					</ModalFlex>
-					<CheckoutButton>Checkout</CheckoutButton>
+					<CheckoutButton handleCartBtn={handleCartBtn}>
+						Checkout
+					</CheckoutButton>
 				</div>,
 				document.getElementById('portal')
 			)}
@@ -65,5 +67,6 @@ function CartModal({ open }) {
 }
 CartModal.propTypes = {
 	open: PropTypes.bool,
+	handleCartBtn: PropTypes.func,
 };
 export default CartModal;

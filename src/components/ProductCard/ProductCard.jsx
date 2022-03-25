@@ -3,24 +3,25 @@ import './ProductCard.css';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Button from '../Buttons/Button/Button';
-function ProductCard({ relative, product }) {
-	const HeroContainer = styled.div`
-		max-width: 40rem;
-		.hero__subtitle {
-			font-weight: 100;
-			letter-spacing: 1rem;
-			text-transform: uppercase;
-		}
-		.hero__title {
-			text-transform: uppercase;
-			margin: 2.4rem 0;
-		}
-		.hero__text {
-			font-weight: 300;
-			margin-bottom: 4.8rem;
-			margin-right: 4.9rem;
-		}
-		${relative
+
+const HeroContainer = styled.div`
+	max-width: 40rem;
+	.hero__subtitle {
+		font-weight: 100;
+		letter-spacing: 1rem;
+		text-transform: uppercase;
+	}
+	.hero__title {
+		text-transform: uppercase;
+		margin: 2.4rem 0;
+	}
+	.hero__text {
+		font-weight: 300;
+		margin-bottom: 4.8rem;
+		margin-right: 4.9rem;
+	}
+	${({ relative }) =>
+		relative
 			? css`
 					.hero__subtitle {
 						color: var(--color-orange-dark);
@@ -69,11 +70,11 @@ function ProductCard({ relative, product }) {
 						margin-right: 4.9rem;
 					}
 			  `}
-	`;
-
+`;
+function ProductCard({ relative, product }) {
 	return (
-		<HeroContainer>
-			{product.new && <h2 className="hero__subtitle">New Product</h2>}
+		<HeroContainer relative={relative}>
+			{product?.new && <h2 className="hero__subtitle">New Product</h2>}
 			{product && <h1 className="hero__title">{product.name}</h1>}
 			{product && <h3 className="hero__text">{product.description}</h3>}
 			<Button

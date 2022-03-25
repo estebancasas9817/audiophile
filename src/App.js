@@ -42,10 +42,11 @@ function App() {
 	return (
 		<>
 			<Header navbar={navbar} handleCartBtn={handleCartBtn} />
-			<CartModal open={isOpen} />
+			<CartModal open={isOpen} handleCartBtn={handleCartBtn} />
 			<CheckoutModal
 				handleCheckModal={handleCheckModal}
 				open={isOpenCheckModal}
+				handleCartBtn={handleCartBtn}
 			/>
 			<Routes>
 				<Route
