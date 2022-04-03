@@ -6,6 +6,6 @@ function ProductTitle({ children }) {
 	return <h1 className="title">{children}</h1>;
 }
 ProductTitle.propTypes = {
-	children: PropTypes.children,
+	children: PropTypes.node,
 };
 export default ProductTitle;

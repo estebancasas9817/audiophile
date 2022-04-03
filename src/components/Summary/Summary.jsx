@@ -3,7 +3,7 @@ import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
 import './Summary.css';
 import PropTypes from 'prop-types';
 
-function Summary({ handleCheckModal }) {
+function Summary({ handlerModal }) {
 	return (
 		<div className="summary">
 			<h2 className="summary__title">Summary</h2>
@@ -55,13 +55,16 @@ function Summary({ handleCheckModal }) {
 					</li>
 				</ul>
 			</div>
-			<CheckoutButton handleCheckModal={handleCheckModal} path="/checkout">
+			<CheckoutButton
+				handlerModal={handlerModal.bind(null, false)}
+				path="/checkout"
+			>
 				Continue & pay
 			</CheckoutButton>
 		</div>
 	);
 }
 Summary.propTypes = {
-	handleCheckModal: PropTypes.func,
+	handlerModal: PropTypes.func,
 };
 export default Summary;

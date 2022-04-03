@@ -3,28 +3,35 @@ import './Button.css';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+const Btn = styled.button`
+	background-color: var(${(props) => props.backcolor});
+	padding: 1.5rem 3.1rem;
+	text-transform: uppercase;
+
+	transition: all 0.3s;
+	border: ${(props) => props.border};
+	.btn__link {
+		color: var(${(props) => props.color});
+	}
+	&:hover {
+		background-color: var(${(props) => props.hover});
+		color: var(--color-white);
+	}
+	&:hover .btn__link {
+		color: var(--color-white);
+	}
+`;
 function Button({ backcolor, hover, border, color, text, product }) {
-	const Btn = styled.button`
-		background-color: var(${backcolor});
-		padding: 1.5rem 3.1rem;
-		text-transform: uppercase;
-
-		transition: all 0.3s;
-		border: ${border};
-		.btn__link {
-			color: var(${color});
-		}
-		&:hover {
-			background-color: var(${hover});
-			color: var(--color-white);
-		}
-		&:hover .btn__link {
-			color: var(--color-white);
-		}
-	`;
-
 	return (
-		<Btn type="button" className="btn">
+		<Btn
+			type="button"
+			className="btn"
+			backcolor={backcolor}
+			border={border}
+			hover={hover}
+			color={color}
+		>
 			{text && (
 				<Link
 					to={`/product-detail/${product?.slug}`}

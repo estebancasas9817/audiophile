@@ -21,20 +21,14 @@ function App() {
 
 	const filteredHeroProduct = products.filter((element) => element.id === 4);
 
-	const handleCartBtn = () => {
-		setIsOpen(!isOpen);
-	};
-	const handleCheckModal = () => {
-		setIsOpenCheckModal(!isOpenCheckModal);
+	const handlerModal = (modal) => {
+		modal ? setIsOpen(!isOpen) : setIsOpenCheckModal(!isOpenCheckModal);
 	};
 	return (
 		<>
-			<Header navbar={navbar} handleCartBtn={handleCartBtn} />
-			<CartModal open={isOpen} handleCartBtn={handleCartBtn} />
-			<CheckoutModal
-				handleCheckModal={handleCheckModal}
-				open={isOpenCheckModal}
-			/>
+			<Header navbar={navbar} handlerModal={handlerModal} />
+			<CartModal open={isOpen} handlerModal={handlerModal} />
+			<CheckoutModal open={isOpenCheckModal} handlerModal={handlerModal} />
 			<Routes>
 				<Route
 					path="/home"
@@ -48,7 +42,7 @@ function App() {
 				<Route path="/" element={<Navigate to="/home" replace />} />
 				<Route
 					path="/checkout"
-					element={<Checkout handleCheckModal={handleCheckModal} />}
+					element={<Checkout handlerModal={handlerModal} />}
 				/>
 
 				<Route

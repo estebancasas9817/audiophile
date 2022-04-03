@@ -2,10 +2,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import './NumbersInput.css';
 import PropTypes from 'prop-types';
-
-function NumbersInput({ modalInput }) {
-	const NumbersInput = styled.div`
-		${modalInput
+const NumbersInputContainer = styled.div`
+	${(props) =>
+		props.modalInput
 			? css`
 					margin-left: auto;
 					& > * {
@@ -38,13 +37,14 @@ function NumbersInput({ modalInput }) {
 						display: inline-block;
 					}
 			  `}
-	`;
+`;
+function NumbersInput({ modalInput }) {
 	return (
-		<NumbersInput>
+		<NumbersInputContainer modalInput={modalInput}>
 			<button className="btn__number">-</button>
 			<input type="number" disabled className="input__number" placeholder="0" />
 			<button className="btn__number">+</button>
-		</NumbersInput>
+		</NumbersInputContainer>
 	);
 }
 NumbersInput.propTypes = {

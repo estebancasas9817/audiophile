@@ -3,32 +3,31 @@ import styled, { css } from 'styled-components';
 import Button from '../Buttons/Button/Button';
 import './Grid.css';
 import PropTypes from 'prop-types';
+const GridCard = styled.div`
+	${({ product }) =>
+		product === 6
+			? css`
+					width: 35rem;
+					position: absolute;
+					right: 10%;
+					top: 20%;
+			  `
+			: css``}
+`;
+const GridTitle = styled.h1`
+	font-size: ${(props) => (props.product === 6 ? '5.6rem' : '2.8rem')};
+	color: ${(props) => (props.product === 6 ? 'white' : 'black')};
+	margin-bottom: 2.4rem;
+	text-transform: uppercase;
+`;
 
+const GridSubTitle = styled.h2`
+	font-size: var(--body-font-size);
+	font-weight: 400;
+	color: var(--color-white);
+	margin: 2.4rem 0 3rem 0;
+`;
 function Grid({ gridItems }) {
-	const GridCard = styled.div`
-		${({ product }) =>
-			product === 6
-				? css`
-						width: 35rem;
-						position: absolute;
-						right: 10%;
-						top: 20%;
-				  `
-				: css``}
-	`;
-	const GridTitle = styled.h1`
-		font-size: ${(props) => (props.product === 6 ? '5.6rem' : '2.8rem')};
-		color: ${(props) => (props.product === 6 ? 'white' : 'black')};
-		margin-bottom: 2.4rem;
-		text-transform: uppercase;
-	`;
-
-	const GridSubTitle = styled.h2`
-		font-size: var(--body-font-size);
-		font-weight: 400;
-		color: var(--color-white);
-		margin: 2.4rem 0 3rem 0;
-	`;
 	return (
 		<div className="grid">
 			{gridItems.reverse().map((product) => (

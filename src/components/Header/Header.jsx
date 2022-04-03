@@ -5,19 +5,19 @@ import './Header.css';
 import PropTypes from 'prop-types';
 import CartButton from '../Buttons/CartButton/CartButton';
 
-function Header({ navbar, handleCartBtn }) {
+function Header({ navbar, handlerModal }) {
 	return (
 		<header className="header">
 			<Icons name="logo" color="#fff" width="140px" height="30px" />
 			<NavBar navbar={navbar} />
-			<CartButton handleCartBtn={handleCartBtn} />
+			<CartButton handlerModal={handlerModal.bind(null, true)} />
 		</header>
 	);
 }
 
 Header.propTypes = {
 	navbar: PropTypes.array,
-	handleCartBtn: PropTypes.func,
+	handlerModal: PropTypes.func,
 };
 
 export default Header;

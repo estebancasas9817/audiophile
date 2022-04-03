@@ -1,12 +1,11 @@
 .header {
 	background-color: var(--color-black-ligther);
 	height: 9.6rem;
-	padding: 0 3rem;
+	padding: 0 15rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	position: relative;
-	/* z-index: 101; */
 }
 .header::after {
 	content: '';

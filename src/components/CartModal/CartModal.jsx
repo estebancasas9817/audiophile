@@ -6,18 +6,17 @@ import NumbersInput from '../FormElements/NumbersInput/NumbersInput';
 import './CartModal.css';
 import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
 import RemoveButton from '../Buttons/RemoveButton/RemoveButton';
-
-function CartModal({ open, handleCartBtn }) {
-	const ModalFlex = styled.div`
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	`;
+const ModalFlex = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+`;
+function CartModal({ open, handleCartBtn, handlerModal }) {
 	if (!open) return null;
 	return (
 		<div>
 			{ReactDOM.createPortal(
-				<div className="backdrop">gbghg</div>,
+				<div className="backdrop"></div>,
 				document.getElementById('overlay')
 			)}
 			{ReactDOM.createPortal(
@@ -56,7 +55,11 @@ function CartModal({ open, handleCartBtn }) {
 						<h1 className="modal__total-name">Total</h1>
 						<h3 className="modal__total-price">$ 456</h3>
 					</ModalFlex>
-					<CheckoutButton handleCartBtn={handleCartBtn} path="/checkout">
+					<CheckoutButton
+						handleCartBtn={handleCartBtn}
+						handlerModal={handlerModal.bind(null, true)}
+						path="/checkout"
+					>
 						Checkout
 					</CheckoutButton>
 				</div>,
@@ -68,5 +71,6 @@ function CartModal({ open, handleCartBtn }) {
 CartModal.propTypes = {
 	open: PropTypes.bool,
 	handleCartBtn: PropTypes.func,
+	handlerModal: PropTypes.func,
 };
 export default CartModal;
