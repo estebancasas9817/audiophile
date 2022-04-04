@@ -11,7 +11,7 @@ import CartModal from './components/CartModal/CartModal';
 import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 import ProductCategory from './pages/ProductCategory/ProductCategory';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartActions } from './store/store';
+import { cartActions } from './store/cart';
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
@@ -28,7 +28,6 @@ function App() {
 	};
 
 	const addProduct = (product, counter) => {
-		// dispatch({ type: 'addProduct', payload: product, quantity: counter });
 		dispatch(cartActions.addProduct({ product, quantity: counter }));
 	};
 	const onChangeItem = (product, flag, counter = 1) => {
@@ -51,8 +50,6 @@ function App() {
 
 	const removeCart = () => {
 		dispatch(cartActions.removeAll());
-
-		// dispatch({ type: 'removeAll' });
 	};
 	let total = 0;
 	if (cartProducts.length > 0) {
