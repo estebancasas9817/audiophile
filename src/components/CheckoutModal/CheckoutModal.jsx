@@ -5,7 +5,13 @@ import PropTypes from 'prop-types';
 import './CheckoutModal.css';
 import Icons from '../Icons/Icons';
 import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
-function CheckoutModal({ open, handleCheckModal, handlerModal }) {
+function CheckoutModal({
+	open,
+	handleCheckModal,
+	handlerModal,
+	total,
+	cartProducts,
+}) {
 	if (!open) return null;
 	return (
 		<div>
@@ -30,18 +36,27 @@ function CheckoutModal({ open, handleCheckModal, handlerModal }) {
 					<div className="checkout-modal-body">
 						<div className="checkout-modal__left">
 							<div className="checkout-modal__flex">
-								<div className="checkout-modal__img"></div>
+								<img
+									src={cartProducts[0].image}
+									className="checkout-modal__img"
+								/>
 								<div className="checkout-modal__box">
-									<h3 className="first__item">XX99 MK II</h3>
-									<p className="first__itenm-price">$ 2,999</p>
+									<h3 className="first__item">{cartProducts[0].name}</h3>
+									<p className="first__itenm-price">
+										$ {cartProducts[0].price}
+									</p>
 								</div>
-								<p className="first__item-quantity">x1</p>
+								<p className="first__item-quantity">
+									x{cartProducts[0].quantity}
+								</p>
 							</div>
-							<p className="other__items">and 2 other item(s)</p>
+							<p className="other__items">
+								and {cartProducts.length - 1} other item(s)
+							</p>
 						</div>
 						<div className="checkout-modal__right">
 							<h3 className="checkout-modal__total">GRAND TOTAL</h3>
-							<p className="checkout-modal__price">$ 5,446</p>
+							<p className="checkout-modal__price">$ {total}</p>
 						</div>
 					</div>
 					<CheckoutButton
@@ -61,5 +76,7 @@ CheckoutModal.propTypes = {
 	open: PropTypes.bool,
 	handleCheckModal: PropTypes.func,
 	handlerModal: PropTypes.func,
+	total: PropTypes.number,
+	cartProducts: PropTypes.array,
 };
 export default CheckoutModal;

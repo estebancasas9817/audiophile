@@ -40,13 +40,11 @@ const NumbersInputContainer = styled.div`
 `;
 function NumbersInput({
 	modalInput,
-	quantity,
 	onCounter,
 	counter,
 	onChangeItem,
 	product,
 }) {
-	console.log(quantity);
 	const handleClick = (flag, product) => {
 		if (onCounter) {
 			onCounter(flag);
@@ -66,7 +64,7 @@ function NumbersInput({
 				type="number"
 				disabled
 				className="input__number"
-				placeholder={counter ? counter : counter}
+				placeholder={counter}
 			/>
 			<button
 				className="btn__number"
@@ -79,7 +77,6 @@ function NumbersInput({
 }
 NumbersInput.propTypes = {
 	modalInput: PropTypes.string,
-	quantity: PropTypes.number,
 	counter: PropTypes.number,
 	onCounter: PropTypes.func,
 	onChangeItem: PropTypes.func,

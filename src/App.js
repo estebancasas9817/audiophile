@@ -30,13 +30,10 @@ function App() {
 	};
 
 	const addProduct = (product, counter) => {
-		console.log('acaaaa');
-		console.log(counter);
 		dispatch({ type: 'addProduct', payload: product, quantity: counter });
 	};
 	const onChangeItem = (product, flag, counter = 1) => {
 		if (flag) {
-			console.log('entra flag');
 			dispatch({ type: 'addProduct', payload: product, quantity: 1 });
 		} else {
 			dispatch({ type: 'deleteProduct', payload: product, quantity: counter });
@@ -76,7 +73,13 @@ function App() {
 				onChangeItem={onChangeItem}
 				total={total}
 			/>
-			<CheckoutModal open={isOpenCheckModal} handlerModal={handlerModal} />
+
+			<CheckoutModal
+				open={isOpenCheckModal}
+				handlerModal={handlerModal}
+				total={total}
+				cartProducts={cartProducts}
+			/>
 			<Routes>
 				<Route
 					path="/home"
