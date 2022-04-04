@@ -77,3 +77,8 @@
 .summary__invoice-item-margin {
 	margin-top: 2.4rem;
 }
+
+.summary__img {
+	width: 6.4rem;
+	height: 6.4rem;
+}

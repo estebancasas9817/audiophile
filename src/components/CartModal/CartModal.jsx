@@ -11,8 +11,17 @@ const ModalFlex = styled.div`
 	align-items: center;
 	justify-content: space-between;
 `;
-function CartModal({ open, handleCartBtn, handlerModal }) {
+function CartModal({
+	open,
+	handleCartBtn,
+	handlerModal,
+	cartProducts,
+	removeCart,
+	onChangeItem,
+	total,
+}) {
 	if (!open) return null;
+
 	return (
 		<div>
 			{ReactDOM.createPortal(
@@ -22,39 +31,35 @@ function CartModal({ open, handleCartBtn, handlerModal }) {
 			{ReactDOM.createPortal(
 				<div className="cartModal">
 					<ModalFlex className="modal__header">
-						<h2 className="modal__title">Cart (3)</h2>
-						<RemoveButton />
+						<h2 className="modal__title">Cart ({cartProducts?.length})</h2>
+						<RemoveButton removeCart={removeCart} />
 					</ModalFlex>
 					<ul className="modal__body">
-						<li className="modal__item">
-							<div className="modal__img"></div>
-							<div className="modal__container">
-								<h1 className="modal__name">XX99 MK II</h1>
-								<h3 className="modal__price">$ 256</h3>
-							</div>
-							<NumbersInput modalInput="modalInput" />
-						</li>
-						<li className="modal__item">
-							<div className="modal__img"></div>
-							<div className="modal__container">
-								<h1 className="modal__name">XX99 MK II</h1>
-								<h3 className="modal__price">$ 256</h3>
-							</div>
-							<NumbersInput modalInput="modalInput" />
-						</li>
-						<li className="modal__item">
-							<div className="modal__img"></div>
-							<div className="modal__container">
-								<h1 className="modal__name">XX99 MK II</h1>
-								<h3 className="modal__price">$ 256</h3>
-							</div>
-							<NumbersInput modalInput="modalInput" />
-						</li>
+						{cartProducts?.length < 1 && <h3>Your cart is empty</h3>}
+						{cartProducts?.length > 0 &&
+							cartProducts?.map((item) => (
+								<li className="modal__item" key={item.id}>
+									<img src={item.image} alt="" className="modal__img" />
+									<div className="modal__container">
+										<h1 className="modal__name">{item.name}</h1>
+										<h3 className="modal__price">$ {item.price}</h3>
+									</div>
+									<NumbersInput
+										modalInput="modalInput"
+										counter={item.quantity}
+										onChangeItem={onChangeItem}
+										product={item}
+									/>
+								</li>
+							))}
 					</ul>
-					<ModalFlex>
-						<h1 className="modal__total-name">Total</h1>
-						<h3 className="modal__total-price">$ 456</h3>
-					</ModalFlex>
+					{cartProducts?.length > 0 && (
+						<ModalFlex>
+							<h1 className="modal__total-name">Total</h1>
+
+							<h3 className="modal__total-price">$ {total}</h3>
+						</ModalFlex>
+					)}
 					<CheckoutButton
 						handleCartBtn={handleCartBtn}
 						handlerModal={handlerModal.bind(null, true)}
@@ -72,5 +77,9 @@ CartModal.propTypes = {
 	open: PropTypes.bool,
 	handleCartBtn: PropTypes.func,
 	handlerModal: PropTypes.func,
+	cartProducts: PropTypes.array,
+	removeCart: PropTypes.func,
+	onChangeItem: PropTypes.func,
+	total: PropTypes.number,
 };
 export default CartModal;

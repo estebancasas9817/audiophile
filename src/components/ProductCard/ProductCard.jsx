@@ -71,7 +71,7 @@ const HeroContainer = styled.div`
 					}
 			  `}
 `;
-function ProductCard({ relative, product }) {
+function ProductCard({ relative, product, restartCounter }) {
 	return (
 		<HeroContainer relative={relative}>
 			{product?.new && <h2 className="hero__subtitle">New Product</h2>}
@@ -83,6 +83,7 @@ function ProductCard({ relative, product }) {
 				color="--color-white"
 				text="See product"
 				product={product}
+				restartCounter={restartCounter}
 			/>
 		</HeroContainer>
 	);
@@ -90,5 +91,6 @@ function ProductCard({ relative, product }) {
 ProductCard.propTypes = {
 	relative: PropTypes.string,
 	product: PropTypes.any,
+	restartCounter: PropTypes.func,
 };
 export default ProductCard;

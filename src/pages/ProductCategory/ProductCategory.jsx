@@ -7,7 +7,7 @@ import Wrapper from '../../components/Wrapper/Wrapper';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import './ProductCategory.css';
-const ProductCategory = ({ products }) => {
+const ProductCategory = ({ products, addProduct, restartCounter }) => {
 	const params = useParams();
 	const filteredProducts = products.filter((product) => {
 		if (product.category === params.category) {
@@ -22,7 +22,11 @@ const ProductCategory = ({ products }) => {
 			</div>
 
 			<Wrapper>
-				<Product filteredProducts={filteredProducts} />
+				<Product
+					filteredProducts={filteredProducts}
+					addProduct={addProduct}
+					restartCounter={restartCounter}
+				/>
 				<ProductBanner />
 				<AudioCard />
 			</Wrapper>
@@ -31,5 +35,7 @@ const ProductCategory = ({ products }) => {
 };
 ProductCategory.propTypes = {
 	products: PropTypes.array,
+	addProduct: PropTypes.func,
+	restartCounter: PropTypes.func,
 };
 export default ProductCategory;

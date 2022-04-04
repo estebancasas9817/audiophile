@@ -22,7 +22,22 @@ const Btn = styled.button`
 		color: var(--color-white);
 	}
 `;
-function Button({ backcolor, hover, border, color, text, product }) {
+function Button({
+	backcolor,
+	hover,
+	border,
+	color,
+	text,
+	product,
+	addProduct,
+	handlerModal,
+	restartCounter,
+}) {
+	const addToCart = () => {
+		addProduct ? addProduct() : null;
+		handlerModal ? handlerModal() : null;
+		restartCounter ? restartCounter() : null;
+	};
 	return (
 		<Btn
 			type="button"
@@ -31,6 +46,7 @@ function Button({ backcolor, hover, border, color, text, product }) {
 			border={border}
 			hover={hover}
 			color={color}
+			onClick={addToCart}
 		>
 			{text && (
 				<Link
@@ -51,5 +67,8 @@ Button.propTypes = {
 	color: PropTypes.string,
 	text: PropTypes.string,
 	product: PropTypes.object,
+	addProduct: PropTypes.func,
+	handlerModal: PropTypes.func,
+	restartCounter: PropTypes.func,
 };
 export default Button;

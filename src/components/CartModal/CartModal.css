@@ -1,9 +1,9 @@
 .cartModal {
-	width: 38rem;
+	width: 45rem;
 	background-color: var(--color-white);
 	position: absolute;
 	top: 15%;
-	left: 65%;
+	left: 60%;
 	z-index: 1000;
 	padding: 3.3rem;
 	border-radius: 8px;
@@ -33,13 +33,11 @@
 	justify-content: center;
 }
 .modal__img {
-	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
 	width: 6.4rem;
 	height: 6.4rem;
 }
 
 .summary__img {
-	background-image: url('../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
 	width: 6.4rem;
 	height: 6.4rem;
 }

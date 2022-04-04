@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './RecommendItem.css';
 import Button from '../Buttons/Button/Button';
-function RecommendItem({ product }) {
+function RecommendItem({ product, restartCounter }) {
 	return (
 		<div className="recommendItem">
 			<div className="recommend__img">
@@ -15,11 +15,13 @@ function RecommendItem({ product }) {
 				color="--color-white"
 				text="See Product"
 				product={product}
+				restartCounter={restartCounter}
 			/>
 		</div>
 	);
 }
 RecommendItem.propTypes = {
 	product: PropTypes.object,
+	restartCounter: PropTypes.func,
 };
 export default RecommendItem;

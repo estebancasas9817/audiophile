@@ -16,8 +16,8 @@ const NumbersInputContainer = styled.div`
 						border: none;
 						color: var(--color-black);
 						text-align: center;
-						width: 4rem;
-						padding-left: 1.5rem;
+						width: 3rem;
+						padding-left: 0.5rem;
 						padding-right: 0;
 						display: inline-block;
 					}
@@ -38,16 +38,51 @@ const NumbersInputContainer = styled.div`
 					}
 			  `}
 `;
-function NumbersInput({ modalInput }) {
+function NumbersInput({
+	modalInput,
+	quantity,
+	onCounter,
+	counter,
+	onChangeItem,
+	product,
+}) {
+	console.log(quantity);
+	const handleClick = (flag, product) => {
+		if (onCounter) {
+			onCounter(flag);
+		} else {
+			onChangeItem(product, flag, counter);
+		}
+	};
 	return (
 		<NumbersInputContainer modalInput={modalInput}>
-			<button className="btn__number">-</button>
-			<input type="number" disabled className="input__number" placeholder="0" />
-			<button className="btn__number">+</button>
+			<button
+				className="btn__number"
+				onClick={() => handleClick(false, product)}
+			>
+				-
+			</button>
+			<input
+				type="number"
+				disabled
+				className="input__number"
+				placeholder={counter ? counter : counter}
+			/>
+			<button
+				className="btn__number"
+				onClick={() => handleClick(true, product)}
+			>
+				+
+			</button>
 		</NumbersInputContainer>
 	);
 }
 NumbersInput.propTypes = {
 	modalInput: PropTypes.string,
+	quantity: PropTypes.number,
+	counter: PropTypes.number,
+	onCounter: PropTypes.func,
+	onChangeItem: PropTypes.func,
+	product: PropTypes.object,
 };
 export default NumbersInput;
