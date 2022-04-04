@@ -1,0 +1,39 @@
+.item__container {
+	margin: 10rem auto;
+	max-width: var(--max-width);
+	display: flex;
+	gap: 10rem;
+	align-items: center;
+}
+
+.item__subtitle {
+	font-weight: 100;
+	letter-spacing: 1rem;
+	text-transform: uppercase;
+	color: var(--color-orange-dark);
+	font-size: var(--body-font-size);
+}
+
+.item__title {
+	text-transform: uppercase;
+	margin: 2.6rem 0 3.2rem 0;
+	font-size: var(--h2-font-size);
+}
+.item__text {
+	font-weight: 300;
+	margin-bottom: 3.2rem;
+	margin-right: 4.9rem;
+	color: var(--color-black);
+	opacity: 50%;
+	font-size: var(--body-font-size);
+}
+
+.item__price {
+	margin-bottom: 4.7rem;
+	font-size: var(--h6-font-size);
+}
+
+.item__right-box {
+	display: flex;
+	gap: 2rem;
+}

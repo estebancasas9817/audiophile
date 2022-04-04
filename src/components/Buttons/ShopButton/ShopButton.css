@@ -1,0 +1,9 @@
+.btn__shop {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.hover:hover {
+	color: var(--color-orange-dark);
+}

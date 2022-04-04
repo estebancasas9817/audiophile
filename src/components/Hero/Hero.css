@@ -1,0 +1,6 @@
+.hero {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	position: relative;
+	height: 80vh;
+}

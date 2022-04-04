@@ -1,0 +1,33 @@
+.paymentDetails {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.payment__item-1 {
+	width: 31rem;
+	height: 13rem;
+}
+.payment__item {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+.payment__item > span {
+	font-size: var(--sub-title-font-size);
+	font-weight: 700;
+}
+
+.payment__item-flex {
+	display: flex;
+	padding: 1.8rem 2.4rem;
+	border-radius: 8px;
+	border: 1px solid var(--color-text-input);
+	width: 31rem;
+	gap: 2.1rem;
+	align-items: center;
+}
+.payment__item-flex > span {
+	font-size: var(--body-font-size);
+	color: var(--color-black);
+	font-weight: 700;
+}

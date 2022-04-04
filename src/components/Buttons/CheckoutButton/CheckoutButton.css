@@ -1,0 +1,14 @@
+.checkoutButton {
+	padding: 1.5rem;
+	text-transform: uppercase;
+	color: var(--color-white);
+	background-color: var(--color-orange-dark);
+	font-size: var(--sub-title-font-size);
+	letter-spacing: 1px;
+	width: 100%;
+	margin-top: 2.4rem;
+}
+
+.btn__link {
+	color: inherit;
+}

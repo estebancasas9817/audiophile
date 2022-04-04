@@ -1,0 +1,11 @@
+.product__box {
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+.product__item {
+	margin-top: 10rem;
+	min-height: 56rem;
+	display: flex;
+	align-items: center;
+	gap: 7rem;
+}

@@ -1,0 +1,12 @@
+.nav__list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3.4rem;
+	font-size: var(--sub-title-font-size);
+	text-transform: uppercase;
+}
+
+.nav__link {
+	color: var(--color-white);
+}

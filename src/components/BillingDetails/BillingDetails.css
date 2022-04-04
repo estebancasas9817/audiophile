@@ -1,0 +1,26 @@
+.billing__container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1.4rem;
+}
+.billing__item {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.billing__item > span {
+	font-size: var(--sub-title-font-size);
+	font-weight: 700;
+}
+.billing__title {
+	color: var(--color-orange-dark);
+	font-size: var(--sub-title-font-size);
+	text-transform: uppercase;
+	letter-spacing: 1.1px;
+	margin: 4.1rem 0 1.6rem 0;
+}
+
+.billing__item-width {
+	flex-basis: 100%;
+}

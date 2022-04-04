@@ -1,0 +1,10 @@
+.home__container {
+	background-image: url('../../assets/image-hero.55c18e98.jpg');
+	height: auto;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: top;
+}
+.home {
+	background-color: #191919;
+}
