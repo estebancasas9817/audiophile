@@ -20,9 +20,7 @@ function App() {
 	const { data: gridItems } = useFetch('grid-items');
 	const dispatch = useDispatch();
 	const cartProducts = useSelector((state) => state);
-
 	const [counter, setCounter] = useState(1);
-
 	const filteredHeroProduct = products.filter((element) => element.id === 4);
 
 	const handlerModal = (modal) => {

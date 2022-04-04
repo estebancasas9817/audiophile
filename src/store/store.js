@@ -1,9 +1,6 @@
 import { createStore } from 'redux';
-// const initialState = {}
 const counterReducer = (state = [], action) => {
 	switch (action.type) {
-		case 'fetch':
-			return action.payload;
 		case 'addProduct':
 			if (state.length === 0) {
 				const product = action.payload;
