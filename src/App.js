@@ -11,7 +11,7 @@ import CartModal from './components/CartModal/CartModal';
 import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 import ProductCategory from './pages/ProductCategory/ProductCategory';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { cartActions } from './store/store';
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
@@ -28,13 +28,14 @@ function App() {
 	};
 
 	const addProduct = (product, counter) => {
-		dispatch({ type: 'addProduct', payload: product, quantity: counter });
+		// dispatch({ type: 'addProduct', payload: product, quantity: counter });
+		dispatch(cartActions.addProduct({ product, quantity: counter }));
 	};
 	const onChangeItem = (product, flag, counter = 1) => {
 		if (flag) {
-			dispatch({ type: 'addProduct', payload: product, quantity: 1 });
+			dispatch(cartActions.addProduct({ product, quantity: 1 }));
 		} else {
-			dispatch({ type: 'deleteProduct', payload: product, quantity: counter });
+			dispatch(cartActions.removeProduct({ product, quantity: counter }));
 		}
 	};
 	const onCounter = (type) => {
@@ -49,7 +50,9 @@ function App() {
 	};
 
 	const removeCart = () => {
-		dispatch({ type: 'removeAll' });
+		dispatch(cartActions.removeAll());
+
+		// dispatch({ type: 'removeAll' });
 	};
 	let total = 0;
 	if (cartProducts.length > 0) {

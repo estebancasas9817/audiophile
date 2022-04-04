@@ -1,6 +1,7 @@
 import React from 'react';
 import './ShopButton.css';
 import Icons from '../../Icons/Icons';
+import PropTypes from 'prop-types';
 
 function ShopButton({ className }) {
 	const style = `btn__show-title ${className}`;
@@ -18,5 +19,7 @@ function ShopButton({ className }) {
 		</button>
 	);
 }
-
+ShopButton.propTypes = {
+	className: PropTypes.node,
+};
 export default ShopButton;
