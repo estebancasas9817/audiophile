@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
@@ -12,6 +12,7 @@ import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 import ProductCategory from './pages/ProductCategory/ProductCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { cartActions } from './store/cart';
+let isInitial = true;
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
@@ -26,6 +27,18 @@ function App() {
 	const handlerModal = (modal) => {
 		modal ? setIsOpen(!isOpen) : setIsOpenCheckModal(!isOpenCheckModal);
 	};
+
+	useEffect(() => {
+		const msg = () => {
+			console.log('Entra use effect');
+		};
+		if (isInitial) {
+			console.log('acaaa');
+			isInitial = false;
+			return;
+		}
+		msg();
+	}, [cartProducts]);
 
 	const addProduct = (product, counter) => {
 		dispatch(cartActions.addProduct({ product, quantity: counter }));

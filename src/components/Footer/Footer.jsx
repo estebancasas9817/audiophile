@@ -2,7 +2,7 @@ import React from 'react';
 import Icons from '../Icons/Icons';
 import NavBar from '../NavBar/NavBar';
 import './Footer.css';
-
+import PropTypes from 'prop-types';
 function Footer({ navbar }) {
 	return (
 		<footer className="footer">
@@ -27,5 +27,7 @@ function Footer({ navbar }) {
 		</footer>
 	);
 }
-
+Footer.propTypes = {
+	navbar: PropTypes.array,
+};
 export default Footer;
