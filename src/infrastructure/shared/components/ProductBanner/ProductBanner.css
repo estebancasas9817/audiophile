@@ -1,0 +1,47 @@
+.product__list {
+	margin: 0 auto;
+	max-width: var(--max-width);
+	margin-top: 10rem;
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	position: relative;
+}
+
+.product__container {
+	width: 35rem;
+	position: relative;
+	height: 28rem;
+	overflow: hidden;
+}
+
+.product {
+	background-color: var(--color-gray-lighter);
+	position: absolute;
+	top: 35%;
+	width: 100%;
+	text-align: center;
+	height: 100%;
+}
+
+.product__img {
+	background-image: url('../../../../assets/shared/desktop/image-category-thumbnail-headphones.png');
+	width: 17rem;
+	height: 17rem;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 2;
+}
+
+.product__title {
+	font-size: var(--h6-font-size);
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-top: 9rem;
+	margin-bottom: 1.9rem;
+}

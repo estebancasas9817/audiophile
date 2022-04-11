@@ -1,29 +1,32 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import ProductDetail from './pages/ProductDetail/ProductDetail';
-import Checkout from './pages/Checkout/Checkout';
-import Header from './components/Header/Header';
-import useFetch from './hooks/useFetch';
-import Footer from './components/Footer/Footer';
-import CartModal from './components/CartModal/CartModal';
-import CheckoutModal from './components/CheckoutModal/CheckoutModal';
-import ProductCategory from './pages/ProductCategory/ProductCategory';
+import Home from './infrastructure/pages/Home/Home';
+import ProductDetail from './infrastructure/pages/ProductDetail/ProductDetail';
+import Checkout from './infrastructure/pages/Checkout/Checkout';
+import Header from './infrastructure/shared/components/Header/Header';
+import useFetch from './infrastructure/hooks/useFetch';
+import Footer from './infrastructure/shared/components/Footer/Footer';
+import CartModal from './infrastructure/shared/components/CartModal/CartModal';
+import CheckoutModal from './infrastructure/pages/Checkout/components/CheckoutModal/CheckoutModal';
+import ProductCategory from './infrastructure/pages/ProductCategory/ProductCategory';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartActions } from './store/cart';
+import {
+	handleAddProduct,
+	handleDeleteProduct,
+	handleDeleteCart,
+} from './application/cartActions';
 let isInitial = true;
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
-	const { data: navbar } = useFetch('navbar');
-	const { data: products } = useFetch('products');
-	const { data: gridItems } = useFetch('grid-items');
+	const navbar = useFetch('navbar');
+	const products = useFetch('products');
+	const gridItems = useFetch('grid-items');
 	const dispatch = useDispatch();
 	const cartProducts = useSelector((state) => state);
 	const [counter, setCounter] = useState(1);
 	const filteredHeroProduct = products.filter((element) => element.id === 4);
-
 	const handlerModal = (modal) => {
 		modal ? setIsOpen(!isOpen) : setIsOpenCheckModal(!isOpenCheckModal);
 	};
@@ -41,13 +44,13 @@ function App() {
 	}, [cartProducts]);
 
 	const addProduct = (product, counter) => {
-		dispatch(cartActions.addProduct({ product, quantity: counter }));
+		handleAddProduct(product, dispatch, counter);
 	};
 	const onChangeItem = (product, flag, counter = 1) => {
 		if (flag) {
-			dispatch(cartActions.addProduct({ product, quantity: 1 }));
+			handleAddProduct(product, dispatch, 1);
 		} else {
-			dispatch(cartActions.removeProduct({ product, quantity: counter }));
+			handleDeleteProduct(product, dispatch, counter);
 		}
 	};
 	const onCounter = (type) => {
@@ -62,7 +65,7 @@ function App() {
 	};
 
 	const removeCart = () => {
-		dispatch(cartActions.removeAll());
+		handleDeleteCart(dispatch);
 	};
 	let total = 0;
 	if (cartProducts.length > 0) {
