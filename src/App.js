@@ -1,16 +1,17 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home from './infrastructure/pages/Home/Home';
-import ProductDetail from './infrastructure/pages/ProductDetail/ProductDetail';
-import Checkout from './infrastructure/pages/Checkout/Checkout';
-import Header from './infrastructure/shared/components/Header/Header';
+import Home from './infrastructure/ui/pages/Home/Home';
+import ProductDetail from './infrastructure/ui/pages/ProductDetail/ProductDetail';
+import Checkout from './infrastructure/ui/pages/Checkout/Checkout';
+import Header from './infrastructure/ui/shared/components/Header/Header';
 import useFetch from './infrastructure/hooks/useFetch';
-import Footer from './infrastructure/shared/components/Footer/Footer';
-import CartModal from './infrastructure/shared/components/CartModal/CartModal';
-import CheckoutModal from './infrastructure/pages/Checkout/components/CheckoutModal/CheckoutModal';
-import ProductCategory from './infrastructure/pages/ProductCategory/ProductCategory';
+import Footer from './infrastructure/ui/shared/components/Footer/Footer';
+import CartModal from './infrastructure/ui/shared/components/CartModal/CartModal';
+import CheckoutModal from './infrastructure/ui/pages/Checkout/components/CheckoutModal/CheckoutModal';
+import ProductCategory from './infrastructure/ui/pages/ProductCategory/ProductCategory';
 import { useSelector, useDispatch } from 'react-redux';
+import { NAVBAR, PRODUCTS, GRID } from './infrastructure/utils/constants/types';
 import {
 	handleAddProduct,
 	handleDeleteProduct,
@@ -20,9 +21,9 @@ let isInitial = true;
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpenCheckModal, setIsOpenCheckModal] = useState(false);
-	const navbar = useFetch('navbar');
-	const products = useFetch('products');
-	const gridItems = useFetch('grid-items');
+	const navbar = useFetch(NAVBAR);
+	const products = useFetch(PRODUCTS);
+	const gridItems = useFetch(GRID);
 	const dispatch = useDispatch();
 	const cartProducts = useSelector((state) => state);
 	const [counter, setCounter] = useState(1);
@@ -36,7 +37,7 @@ function App() {
 			console.log('Entra use effect');
 		};
 		if (isInitial) {
-			console.log('acaaa');
+			console.log('entra if use effect');
 			isInitial = false;
 			return;
 		}

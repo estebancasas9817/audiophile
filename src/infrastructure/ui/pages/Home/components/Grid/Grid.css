@@ -33,7 +33,7 @@
 	padding-left: 7rem;
 }
 .yx1-earphones {
-	background-image: url('../../../../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
+	background-image: url('../../../../../../assets/product-yx1-earphones/desktop/image-gallery-2.jpg');
 	grid-area: small-1;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -63,7 +63,7 @@
 	top: 20%;
 }
 .zx7-speaker {
-	background-image: url('../../../../../assets/shared/desktop/image-speaker-zx7.3d4940e8.jpg');
+	background-image: url('../../../../../../assets/shared/desktop/image-speaker-zx7.3d4940e8.jpg');
 	grid-area: medium;
 	padding-top: 10rem;
 	padding-left: 7rem;

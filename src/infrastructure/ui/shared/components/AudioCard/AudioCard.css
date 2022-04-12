@@ -27,7 +27,7 @@
 }
 
 .audio__img {
-	background-image: url('../../../../assets/shared/desktop/image-best-gear.jpg');
+	background-image: url('../../../../../assets/shared/desktop/image-best-gear.jpg');
 	width: 50rem;
 	height: 50rem;
 	border-radius: 5px;

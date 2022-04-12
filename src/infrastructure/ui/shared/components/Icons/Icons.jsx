@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import sprite from '../../../../assets/sprite.svg';
+import sprite from '../../../../../assets/sprite.svg';
 
 import './Icons.css';
 import PropTypes from 'prop-types';

@@ -25,7 +25,7 @@
 }
 
 .product__img {
-	background-image: url('../../../../assets/shared/desktop/image-category-thumbnail-headphones.png');
+	background-image: url('../../../../../assets/shared/desktop/image-category-thumbnail-headphones.png');
 	width: 17rem;
 	height: 17rem;
 	background-position: center;
